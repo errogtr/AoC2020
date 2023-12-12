@@ -15,10 +15,10 @@ def compositions(n):
 with open("data") as f:
     joltage = [int(x) for x in f.readlines()]
 
-jolts_diff = [y - x for x, y in pairwise(sorted(joltage + [0, max(joltage) + 3]))]
+jolt_diffs = [y - x for x, y in pairwise(sorted(joltage + [0, max(joltage) + 3]))]
 
 # ======== PART 1 =========
-print(jolts_diff.count(1) * jolts_diff.count(3))
+print(jolt_diffs.count(1) * jolt_diffs.count(3))
 
 # ======== PART 2 =========
-print(prod(compositions(len(list(g))) for k, g in groupby(jolts_diff) if k == 1))
+print(prod(compositions(len(list(g))) for k, g in groupby(jolt_diffs) if k == 1))
