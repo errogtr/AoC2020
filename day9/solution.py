@@ -8,10 +8,9 @@ def is_valid(num, previous):
 def rolling(numbers, invalid_num, max_idx):
     for i in range(max_idx - 1):
         for j in range(i + 1):
-            window = numbers[j : invalid_idx - i + j]
+            window = numbers[j: invalid_idx - i + j]
             if sum(window) == invalid_num:
                 return min(window) + max(window)
-    return 0
 
 
 with open("data") as f:
